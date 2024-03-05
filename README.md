@@ -1,6 +1,6 @@
 # Preview :
 
-https://shop-with-angular.vercel.app/products
+https://shop-with-angular.vercel.app/
 
 # ShopWithAngular
 
