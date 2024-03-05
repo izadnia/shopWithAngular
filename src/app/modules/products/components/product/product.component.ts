@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from '../../../../models/product';
+import { ProductService } from '../../../../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,9 @@ export class ProductComponent {
   constructor(
     config: NgbModalConfig,
     private modalService: NgbModal,
-    private router: Router
+    private router: Router,
+    private productService : ProductService
+   
   ) {
     config.backdrop = 'static';
     config.keyboard = false;
@@ -32,9 +35,10 @@ export class ProductComponent {
 
   selectProduct() {
     this.onProductSelect.emit(this.product);
+   
   }
   selectProductPage(item: Product) {
-    console.log(item.id)
+    this.productService.setSelectedProductPage(item);
     this.router.navigate(['products/fruit', item.id]);
   }
 }

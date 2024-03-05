@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from '../../../../models/product';
+import { ProductService } from '../../../../services/product.service';
 
 @Component({
   selector: 'app-single-product',
@@ -8,27 +9,36 @@ import { Product } from '../../../../models/product';
   styleUrl: './single-product.component.scss',
 })
 export class SingleProductComponent {
-  constructor(private rout: ActivatedRoute) {}
-  @Input() product: Product = new Product();
+  constructor(
+    private rout: ActivatedRoute,
+    private productService: ProductService
+  ) {}
+  // @Input() product: Product = new Product();
+
+  subscription: any;
+  product: any;
 
   ngOnInit(): void {
-    this.rout.params.subscribe((params: Params) => {
-      let id = +params['id'];
-      if (id) {
-        this.product = this.productList.filter((m)=>m.id == id)[0];
+    this.subscription = this.productService.selectedProductPage.subscribe(
+      (data) => {
+        if (!data?.id) return;
+        this.productService
+          .getProduct(data.id)
+          .subscribe((data) => (this.product = data));
       }
+    );
 
-    });
+    // this.rout.params.subscribe((params: Params) => {
+    //   let id = +params['id'];
+    //   if (id) {
+    //     this.productService.getProdcut(id).subscribe((data:Product) => {
+    //       this.product = data;
+    //     });
+    //   }
+    // });
   }
-  productList: Product[] = [
-    { id: 1, title: 'گوجه فرنگی', price: 300, expireDate: 1710494434248 },
-    { id: 2, title: 'پیاز', price: 300, expireDate: 1715494434248 },
-    { id: 3, title: 'سیب زمینی', price: 200, expireDate: 1729494434248 },
-    { id: 4, title: 'سیب', price: 400, expireDate: 1729494434248 },
-    { id: 5, title: 'خیار رسمی', price: 100, expireDate: 1719494434248 },
-    { id: 6, title: 'خیار سالادی', price: 100, expireDate: 1719494434248 },
-    { id: 7, title: 'کلم', price: 300, expireDate: 1713494434248 },
-    { id: 8, title: 'کاهو', price: 400, expireDate: 1711494434248 },
-    { id: 9, title: 'کلم سفید', price: 800, expireDate: 1714494434248 },
-  ];
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

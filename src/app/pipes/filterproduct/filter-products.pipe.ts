@@ -17,7 +17,6 @@ export class FilterProductsPipe implements PipeTransform {
     }
 
     if (filter.price) results = results.filter((m) => m.price <= filter.price);
-    console.log(results)
     return results;
 
   }
