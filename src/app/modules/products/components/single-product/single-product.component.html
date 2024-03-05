@@ -1,0 +1,29 @@
+<div [ngStyle]="{'display': 'flex'}" class="card mb-4 text-center">
+  <div class="col-md-4">
+    <div class="col-md-12">
+      <img
+        [src]="'assets/img/' + this.product.id + '.jpg'"
+        class="card-img-top rounded"
+        alt="product"
+      />
+    </div>
+    <div class="card-body text-center">
+      <h3 class="card-title">{{ product.title }}</h3>
+      <p class="card-text">{{ product.price }} تومان</p>
+      <P [ngStyle]="{ 'font-size': '1.2rem' }">
+        انقضاء :
+        <span [ngStyle]="{ 'font-size': '1.2rem', color: 'blue' }">{{
+          product.expireDate | persianDate
+        }}</span></P
+      >
+
+      <button href="" class="btn btn-success">اضافه به سبد خرید</button>
+      <button href="" class="btn btn-primary">مشخصات محصول</button>
+    </div>
+  </div>
+  <div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, harum nulla? Facere ducimus aliquid officiis eaque a necessitatibus fugit culpa consequuntur libero modi cupiditate ipsum, corrupti tenetur perferendis voluptatibus porro.
+    </p>
+  </div>
+</div>
