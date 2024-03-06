@@ -25,7 +25,7 @@
     <p class="card-text">{{product.price}} تومان</p>
     <P>   انقضاء :  <span>{{product.expireDate | persianDate }}</span></P>
   
-    <button (click)="open(content)"  class="btn btn-success">اضافه به سبد خرید</button>
+    <button (click)="selectProduct(product.id)"  class="btn btn-success">اضافه به سبد خرید</button>
     <button (click)="selectProductPage(product)"  class="btn btn-primary">مشخصات محصول</button>
   </div>
 </div>

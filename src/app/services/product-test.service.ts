@@ -63,7 +63,7 @@ export class ProductTestService {
   }
   // ************************************** */
 
-  // ****** جمع کالا های انتخاب شده ******** */
+    // ****** جمع کالا های انتخاب شده ******** */
   //
   // تعریف کلاس : BehaviorSubject
   // ورودی : Product ID
@@ -74,10 +74,11 @@ export class ProductTestService {
   //  3 : به آرایه محصولات انتخاب شده توسط کاربر اضافه می کند
   //
   //
-  private selectedProducts$ = new BehaviorSubject<Product>(new Product());
-  selectedProducts = this.selectedProducts$.asObservable();
-  setSelectedProducts(val: Product) {
-    this.selectedProducts$.next(val);
-  }
+  // private selectedProducts$ = new BehaviorSubject<Product>(new Product());
+  // selectedProducts = this.selectedProducts$.asObservable();
+  // setSelectedProducts(val: Product) {
+  //   let _val = this.productList.filter((m) => m.id == val.id)[0];
+  //   this.selectedProducts$.next(_val);
+  // }
   // *************************************** */
 }

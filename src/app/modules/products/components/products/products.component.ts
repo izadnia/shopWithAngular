@@ -10,7 +10,7 @@ import { ProductService } from '../../../../services/product.service';
 export class ProductsComponent {
   constructor(private productService: ProductService) {}
   inputSearchLabel: string = 'جست و جو';
-  selectedProduct: Product = new Product();
+  sumSelectedProduct: Product = new Product();
   filter: Product = new Product();
   productList: Product[] = [];
 
@@ -24,7 +24,9 @@ export class ProductsComponent {
     });
   }
 
-  selectProduct(item: Product) {
-    this.selectedProduct = item;
+  selectedProduct(item: Product) {
+    this.productService.selectedProduct((m: Product) => {
+      this.sumSelectedProduct = m;
+    });
   }
 }

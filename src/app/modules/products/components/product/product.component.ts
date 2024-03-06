@@ -31,11 +31,11 @@ export class ProductComponent {
     this.imageSrc = 'assets/img/' + this.product.id + '.jpg';
   }
   @Input() product: Product;
-  @Output() onProductSelect = new EventEmitter<Product>();
+  // @Output() onProductSelect = new EventEmitter<Product>();
 
-  selectProduct() {
-    this.onProductSelect.emit(this.product);
-   
+  selectProduct(id : number) {
+    // this.onProductSelect.emit(this.product);
+    this.productService.setSelectedProducts(id)
   }
   selectProductPage(item: Product) {
     this.productService.setSelectedProductPage(item);

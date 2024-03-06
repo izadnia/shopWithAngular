@@ -8,6 +8,8 @@ export class ProductService {
   private selectedProductPage$ = new Subject<Product>();
 
   selectedProductPage = this.selectedProductPage$.asObservable();
+  setSelectedProducts: any;
+  selectedProduct: any;
 
   setSelectedProductPage(val: Product) {
     this.selectedProductPage$.next(val);

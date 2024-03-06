@@ -1,6 +1,5 @@
 <div class="container">
   <!-- <p class="display-6">محصولات ما</p> -->
-
   <div class="d-flex justify-content-between">
     <div class="col-md-8 ">
       <input
@@ -28,13 +27,13 @@
     </div>
   </div>
 
-  <!-- <p>
-    میوه ها {{ selectedProduct.title ? " . " + selectedProduct.title : null }}
-  </p> -->
+  <p>
+    میوه ها {{ sumSelectedProduct | json }}
+  </p>
   <div class="row mt-4">
     <ng-container *ngIf="(productList | filterProducts: filter).length > 0; else notFound">
       <div class="col-md-3 col-sm-6" *ngFor="let item of productList | filterProducts: filter">
-        <app-product (onProductSelect)="selectProduct($event)" [product]="item"></app-product>
+        <app-product [product]="item"></app-product>
       </div>
     </ng-container>
     <ng-template #notFound>

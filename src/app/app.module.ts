@@ -20,6 +20,7 @@ import { ProductTestService } from './services/product-test.service';
     FooterComponent,
     SidebarComponent,
     HomeComponent,
+
   ],
   imports: [
     BrowserModule,
