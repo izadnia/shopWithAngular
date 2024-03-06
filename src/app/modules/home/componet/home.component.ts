@@ -12,12 +12,9 @@ constructor( ){}
 productList: Product[] = [];
 
 ngOnInit(): void {
-   this.setProduct();
+
 }
 
-setProduct() {
- 
-}
 
 
 }

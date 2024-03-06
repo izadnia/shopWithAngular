@@ -14,63 +14,31 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th class="align-middle" scope="row">1</th>
-        <td class="align-middle">گوجه فرنگی</td>
-        <td class="align-middle">
-          <img
-            [src]="'assets/img/1.jpg'"
-            class="card-img-top w-25 rounded"
-            alt="product"
-          />
-        </td>
-        <td class="align-middle">mdo</td>
-        <td class="align-middle">Mark</td>
-        <td class="align-middle">Otto</td>
-        <td class="align-middle">
-          <button class="btn btn-danger">حذف</button>
-        </td>
-        <td class="align-middle">
-          <button class="btn btn-primary">اضافه</button>
-        </td>
-        <td class="align-middle">
-          <button class="btn btn-success">جزئیات</button>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td class="align-middle">Mark</td>
-        <td class="align-middle">Otto</td>
-        <td class="align-middle">mdo</td>
-        <td class="align-middle">Mark</td>
-        <td class="align-middle">Otto</td>
-        <td class="align-middle">
-          <button class="btn btn-danger">حذف</button>
-        </td>
-        <td class="align-middle">
-          <button class="btn btn-primary">اضافه</button>
-        </td>
-        <td class="align-middle">
-          <button class="btn btn-success">جزئیات</button>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td class="align-middle">Mark</td>
-        <td class="align-middle">Otto</td>
-        <td class="align-middle">mdo</td>
-        <td class="align-middle">Mark</td>
-        <td class="align-middle">Otto</td>
-        <td class="align-middle">
-          <button class="btn btn-danger">حذف</button>
-        </td>
-        <td class="align-middle">
-          <button class="btn btn-primary">اضافه</button>
-        </td>
-        <td class="align-middle">
-          <button class="btn btn-success">جزئیات</button>
-        </td>
-      </tr>
+      <ng-container *ngFor="let item of selectedProductList">
+        <tr>
+          <th class="align-middle" scope="row">{{item.id}}</th>
+          <td class="align-middle">{{item.title}}</td>
+          <td class="align-middle">
+            <img
+              [src]="'assets/img/' + item.id + '.jpg'"
+              class="card-img-top w-25 rounded"
+              alt="product"
+            />
+          </td>
+          <td class="align-middle">{{item.price}}</td>
+          <td class="align-middle"> - </td>
+          <td class="align-middle"> {{item.expireDate  }} </td>
+          <td class="align-middle">
+            <button class="btn btn-danger">حذف</button>
+          </td>
+          <td class="align-middle">
+            <button class="btn btn-primary">اضافه</button>
+          </td>
+          <td class="align-middle">
+            <button (click)="selectProductPage(item)"  class="btn btn-success">مشخصات محصول</button>
+          </td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>

@@ -28,19 +28,7 @@ import { ProductTestService } from '../../services/product-test.service';
     HttpClientModule
   ],
   providers:[
-    {
-      provide: ProductService,
-      useFactory: (http: HttpClient) => {
-        // Provide custom logic for environment-specific service selection
-        // (e.g., based on feature flags, configurations, etc.)
-        if (environment.production) {
-          return new ProductTestService();
-        } else {
-          return new ProductService(http);
-        }
-      },
-      deps: [HttpClient],
-    },
+   
   ]
 })
 export class ProductsModule { }

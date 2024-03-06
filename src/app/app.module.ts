@@ -12,6 +12,7 @@ import { ProductService } from './services/product.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment.development';
 import { ProductTestService } from './services/product-test.service';
+import { PersianDatePipe } from './pipes/persiandate/persian-date.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductTestService } from './services/product-test.service';
     FooterComponent,
     SidebarComponent,
     HomeComponent,
+    PersianDatePipe
 
   ],
   imports: [
@@ -30,19 +32,19 @@ import { ProductTestService } from './services/product-test.service';
     HttpClientModule,
   ],
   providers: [
-    // {
-    //   provide: ProductService,
-    //   useFactory: (http: HttpClient) => {
-    //     // Provide custom logic for environment-specific service selection
-    //     // (e.g., based on feature flags, configurations, etc.)
-    //     if (environment.production) {
-    //       return new ProductTestService();
-    //     } else {
-    //       return new ProductService(http);
-    //     }
-    //   },
-    //   deps: [HttpClient],
-    // },
+    {
+      provide: ProductService,
+      useFactory: (http: HttpClient) => {
+        // Provide custom logic for environment-specific service selection
+        // (e.g., based on feature flags, configurations, etc.)
+        if (environment.production) {
+          return new ProductTestService();
+        } else {
+          return new ProductService(http);
+        }
+      },
+      deps: [HttpClient],
+    },
   ],
   bootstrap: [AppComponent],
 })

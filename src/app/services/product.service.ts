@@ -5,6 +5,11 @@ import { Product } from '../models/product';
 
 @Injectable()
 export class ProductService {
+
+  deleteSelectedProduct(id: number) {
+    throw new Error('Method not implemented.');
+  }
+
   private selectedProductPage$ = new Subject<Product>();
 
   selectedProductPage = this.selectedProductPage$.asObservable();
@@ -22,5 +27,9 @@ export class ProductService {
 
   getProduct(id: number): Observable<Product[]> {
     return this.http.get<any>(`/services1/products/${id.toString()}`);
+  }  
+  
+  getSelectedProducts() : Observable<Product[]> {
+    return this.http.get<any>('/services1/checkout');
   }
 }

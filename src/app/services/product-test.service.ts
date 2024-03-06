@@ -8,6 +8,14 @@ import { Product } from '../models/product';
 export class ProductTestService {
   constructor() {}
 
+  /************ سبد خرید  */
+  checkOutList: Product[] = [
+    { id: 1, title: 'گوجه فرنگی', price: 800, expireDate: 1710494434248 },
+    { id: 2, title: 'پیاز', price: 700, expireDate: 1715494434248 },
+    { id: 3, title: 'سیب زمینی', price: 500, expireDate: 1729494434248 },
+  ];
+  /*********************** */
+
   //************* لیست محصولات ********** */
   productList: Product[] = [
     { id: 1, title: 'گوجه فرنگی', price: 800, expireDate: 1710494434248 },
@@ -34,6 +42,24 @@ export class ProductTestService {
     return of(this.productList);
   }
   /*************************************** */
+
+
+    // ******** دریافت لیست محصولات ******** */
+  //
+  // تعریف کلاس : Observable
+  // ورودی : -
+  // خروجی : Products List
+  // توضیحات :
+  // تمامی محصولات به صورت لیست پاسخ داده می شود
+  //
+  getSelectedProducts(): Observable<Product[]> {
+    return of(this.checkOutList);
+    
+  }
+  /*************************************** */
+
+
+
 
   // ********** دریافت یک محصول ********** */
   //
@@ -63,7 +89,7 @@ export class ProductTestService {
   }
   // ************************************** */
 
-    // ****** جمع کالا های انتخاب شده ******** */
+  // ****** جمع کالا های انتخاب شده ******** */
   //
   // تعریف کلاس : BehaviorSubject
   // ورودی : Product ID
@@ -74,11 +100,7 @@ export class ProductTestService {
   //  3 : به آرایه محصولات انتخاب شده توسط کاربر اضافه می کند
   //
   //
-  // private selectedProducts$ = new BehaviorSubject<Product>(new Product());
-  // selectedProducts = this.selectedProducts$.asObservable();
-  // setSelectedProducts(val: Product) {
-  //   let _val = this.productList.filter((m) => m.id == val.id)[0];
-  //   this.selectedProducts$.next(_val);
+
   // }
   // *************************************** */
 }
