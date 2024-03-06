@@ -116,10 +116,10 @@ export class ProductTestService {
     let existFlag = this.checkOutList.filter((m)=>m.id == id)[0]
     if(!existFlag){
       this.checkOutList.push(object)
-      alert('محصول با موفقیت به سبد خرید اضافه شد')
+      alert(`${object.title} با موفقیت به سبد خرید اضافه شد`)
 
     }else{
-      alert('محصول قبلا به سبد خرید اضافه شده است')
+      alert(`${existFlag.title} قبلا به سبد خرید اضافه شده است`)
     }
   }
   // }
