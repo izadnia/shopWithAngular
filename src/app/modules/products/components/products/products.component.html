@@ -6,24 +6,26 @@
         [(ngModel)]="filter.title"
         [placeholder]="inputSearchLabel"
         type="text"
-        class="form-control text-center fs-4"
+        class="form-control text-info text-center fs-4"
         aria-label="Large"
         aria-describedby="inputGroup-sizing-sm"
       />
     </div>
 
-    <div class="d-flex flex-row text-center col-md-3">
-      <label for="customRange3" class="mx-4 form-label fs-4">قیمت:</label>
+    <div class="d-flex justify-content-end my-1 px-2 text-center col-md-8">
+      <label for="customRange3" class="mx-4 text-primary form-label w-25 fs-4">نتایج محصولات:</label>
       <input
         [(ngModel)]="filter.price"
         type="range"
-        class="form-range mt-2"
+        class="form-range my-2 w-50"
         [value]="filter.price"
         min="10"
         max="1000"
         step="10"
         id="customRange3"
       />
+    <label for="customRange3" class="text-primary mx-4 w-25 form-label fs-4">تا {{filter.price}} تومان</label>
+
     </div>
   </div>
 
