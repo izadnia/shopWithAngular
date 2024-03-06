@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Product } from '../../../../models/product';
 import { ProductService } from '../../../../services/product.service';
 
@@ -11,7 +11,8 @@ import { ProductService } from '../../../../services/product.service';
 export class SingleProductComponent {
   constructor(
     private rout: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) {}
   // @Input() product: Product = new Product();
 
@@ -37,7 +38,9 @@ export class SingleProductComponent {
     //   }
     // });
   }
-
+  goToCheckOut() {
+    this.router.navigate(['checkout']);
+  }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
