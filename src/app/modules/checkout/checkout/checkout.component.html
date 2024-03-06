@@ -30,7 +30,7 @@
           <td class="align-middle">-</td>
           <!-- <td class="align-middle">{{ item.expireDate }}</td> -->
           <td class="align-middle">
-            <button class="btn btn-danger">حذف</button>
+            <button (click)="deleteSelectedProduct(item.id)" class="btn btn-danger">حذف</button>
           </td>
           <td class="align-middle">
             <button class="btn btn-primary">اضافه</button>

@@ -32,4 +32,5 @@ export class ProductService {
   getSelectedProducts() : Observable<Product[]> {
     return this.http.get<any>('/services1/checkout');
   }
+  
 }

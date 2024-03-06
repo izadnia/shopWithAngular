@@ -33,5 +33,6 @@ ngOnInit(): void {
 
   deleteSelectedProduct(id: number) {
     this.productService.deleteSelectedProduct(id);
+    
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { Product } from '../models/product';
 
 @Injectable({
@@ -44,7 +44,7 @@ export class ProductTestService {
   /*************************************** */
 
 
-    // ******** دریافت لیست محصولات ******** */
+    // ******** دریافت لیست محصولات انتخاب شده ******** */
   //
   // تعریف کلاس : Observable
   // ورودی : -
@@ -58,7 +58,20 @@ export class ProductTestService {
   }
   /*************************************** */
 
-
+  // ********** حذف یک محصول ********** */
+  //
+  // تعریف کلاس : Observable
+  // ورودی : Product ID
+  // خروجی : Product As an Object
+  // توضیحات :
+  // شناسه کالا دریافت و مشخصات کالا پاسخ داده می شود
+  //
+  deleteSelectedProduct(id: number) : Observable<any> {
+    let index = this.checkOutList.findIndex((m) => m.id == id)
+    this.checkOutList.splice(index,1)
+    return of(this.checkOutList);
+  }
+  //************************************** */
 
 
   // ********** دریافت یک محصول ********** */
