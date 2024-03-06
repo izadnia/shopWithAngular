@@ -1,23 +1,23 @@
 <div class="container">
   <!-- <p class="display-6">محصولات ما</p> -->
   <div class="d-flex justify-content-between">
-    <div class="col-md-8 ">
+    <div class="col-md-4">
       <input
         [(ngModel)]="filter.title"
         [placeholder]="inputSearchLabel"
         type="text"
-        class="form-control h-100 text-center fs-4"
+        class="form-control text-center fs-4"
         aria-label="Large"
         aria-describedby="inputGroup-sizing-sm"
       />
     </div>
 
-    <div class="d-flex flex-column text-center col-md-3">
-      <label for="customRange3" class="form-label fs-4">قیمت</label>
+    <div class="d-flex flex-row text-center col-md-3">
+      <label for="customRange3" class="mx-4 form-label fs-4">قیمت:</label>
       <input
-      [(ngModel)]="filter.price"
+        [(ngModel)]="filter.price"
         type="range"
-        class="form-range"
+        class="form-range mt-2"
         [value]="filter.price"
         min="10"
         max="1000"
@@ -28,11 +28,16 @@
   </div>
 
   <p>
-    میوه ها {{ sumSelectedProduct | json }}
+    <!-- میوه ها {{ sumSelectedProduct | json }} -->
   </p>
   <div class="row mt-4">
-    <ng-container *ngIf="(productList | filterProducts: filter).length > 0; else notFound">
-      <div class="col-md-3 col-sm-6" *ngFor="let item of productList | filterProducts: filter">
+    <ng-container
+      *ngIf="(productList | filterProducts : filter).length > 0; else notFound"
+    >
+      <div
+        class="col-md-3 col-sm-6"
+        *ngFor="let item of productList | filterProducts : filter"
+      >
         <app-product [product]="item"></app-product>
       </div>
     </ng-container>
@@ -42,5 +47,4 @@
       </div>
     </ng-template>
   </div>
-  
 </div>
