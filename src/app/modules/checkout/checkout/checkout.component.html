@@ -16,18 +16,19 @@
     <tbody>
       <ng-container *ngFor="let item of selectedProductList">
         <tr>
-          <th class="align-middle" scope="row">{{item.id}}</th>
-          <td class="align-middle">{{item.title}}</td>
+          <th class="align-middle" scope="row">{{ item.id }}</th>
+          <td class="align-middle">{{ item.title }}</td>
           <td class="align-middle">
             <img
               [src]="'assets/img/' + item.id + '.jpg'"
-              class="card-img-top w-25 rounded"
+              [ngStyle]="{ width: '5rem' }"
+              class="card-img-top rounded"
               alt="product"
             />
           </td>
-          <td class="align-middle">{{item.price}}</td>
-          <td class="align-middle"> - </td>
-          <td class="align-middle"> {{item.expireDate  }} </td>
+          <td class="align-middle">{{ item.price }}</td>
+          <td class="align-middle">-</td>
+          <td class="align-middle">{{ item.expireDate }}</td>
           <td class="align-middle">
             <button class="btn btn-danger">حذف</button>
           </td>
@@ -35,7 +36,9 @@
             <button class="btn btn-primary">اضافه</button>
           </td>
           <td class="align-middle">
-            <button (click)="selectProductPage(item)"  class="btn btn-success">مشخصات محصول</button>
+            <button (click)="selectProductPage(item)" class="btn btn-success">
+              مشخصات محصول
+            </button>
           </td>
         </tr>
       </ng-container>
