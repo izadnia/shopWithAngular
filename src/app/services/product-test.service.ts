@@ -10,9 +10,7 @@ export class ProductTestService {
 
   /************ سبد خرید  */
   checkOutList: Product[] = [
-    { id: 1, title: 'گوجه فرنگی', price: 800, expireDate: 1710494434248 },
-    { id: 2, title: 'پیاز', price: 700, expireDate: 1715494434248 },
-    { id: 3, title: 'سیب زمینی', price: 500, expireDate: 1729494434248 },
+  
   ];
   /*********************** */
 
@@ -113,7 +111,17 @@ export class ProductTestService {
   //  3 : به آرایه محصولات انتخاب شده توسط کاربر اضافه می کند
   //
   //
+  setSelectedProducts(id : number) {
+    let object =this.productList.filter((m)=>m.id == id)[0]
+    let existFlag = this.checkOutList.filter((m)=>m.id == id)[0]
+    if(!existFlag){
+      this.checkOutList.push(object)
+      alert('محصول با موفقیت به سبد خرید اضافه شد')
 
+    }else{
+      alert('محصول قبلا به سبد خرید اضافه شده است')
+    }
+  }
   // }
   // *************************************** */
 }

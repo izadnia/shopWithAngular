@@ -38,6 +38,11 @@ export class SingleProductComponent {
     //   }
     // });
   }
+  selectProduct(id : number) {
+    // this.onProductSelect.emit(this.product);
+    this.productService.setSelectedProducts(id);
+    this.router.navigate(['checkout']);
+  }
   goToCheckOut() {
     this.router.navigate(['checkout']);
   }

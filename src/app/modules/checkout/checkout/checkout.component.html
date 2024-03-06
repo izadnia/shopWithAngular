@@ -1,4 +1,4 @@
-<div>
+<ng-container *ngIf="selectedProductList.length; else templateAlternative">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -30,7 +30,12 @@
           <td class="align-middle">-</td>
           <!-- <td class="align-middle">{{ item.expireDate }}</td> -->
           <td class="align-middle">
-            <button (click)="deleteSelectedProduct(item.id)" class="btn btn-danger">حذف</button>
+            <button
+              (click)="deleteSelectedProduct(item.id)"
+              class="btn btn-danger"
+            >
+              حذف
+            </button>
           </td>
           <td class="align-middle">
             <button class="btn btn-primary">اضافه</button>
@@ -44,4 +49,13 @@
       </ng-container>
     </tbody>
   </table>
-</div>
+</ng-container>
+<ng-template #templateAlternative>
+  <div class="col text-center p-4 m-4">
+    <h3 class="text-danger">سبد خرید شما خالیه</h3>
+    <br />
+    <a [routerLink]="['/products']" class="btn bg-secondary text-light btn-lg"
+      >بازگشت به فروشگاه</a
+    >
+  </div>
+</ng-template>
