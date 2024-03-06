@@ -12,7 +12,6 @@ import { ProductService } from './services/product.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment.development';
 import { ProductTestService } from './services/product-test.service';
-import { PersianDatePipe } from './pipes/persiandate/persian-date.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { PersianDatePipe } from './pipes/persiandate/persian-date.pipe';
     FooterComponent,
     SidebarComponent,
     HomeComponent,
-    PersianDatePipe
+
 
   ],
   imports: [
