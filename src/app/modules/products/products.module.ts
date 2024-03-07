@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import {FilterProductsPipe} from '../../pipes/filterproduct/filter-products.pipe'
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsControllerComponent } from './components/products/products-controller/products-controller.component';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     ProductsRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    NgbDropdownModule
   ],
   providers:[
    

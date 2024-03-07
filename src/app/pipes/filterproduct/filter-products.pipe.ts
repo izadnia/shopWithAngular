@@ -13,7 +13,13 @@ export class FilterProductsPipe implements PipeTransform {
     if (filter.title) {
       results = results.filter((m) => m.title.includes(filter.title));
     }
-    if (filter.price) results = results.filter((m) => m.price <= filter.price);
+    if (filter.price) {
+      results = results.filter((m) => m.price <= filter.price);
+    } if (filter.category){
+      results = results.filter((m)=> m.category == filter.category)
+    }if (filter.expireDate){
+      results = results.filter((m)=> m.expireDate == filter.expireDate)
+    }
     
     return results;
 

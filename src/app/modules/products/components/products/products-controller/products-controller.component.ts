@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Product } from '../../../../../models/product';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-products-controller',
@@ -10,7 +9,7 @@ export class ProductsControllerComponent {
   @Output() filterChanged: EventEmitter<any> = new EventEmitter<any>();
   titleIsCollapsed = true;
   priceIsCollapsed = true;
-  categoryIsCollapsed = true;
+  categoryIsCollapsed = false;
   expireDateIsCollapsed = true;
   inputSearchLabel: string = 'نام محصول';
   filter: any = {
@@ -21,5 +20,9 @@ export class ProductsControllerComponent {
   };
   onFilterChange() {
     this.filterChanged.emit(this.filter);
+  }
+  onCategoryChange(value: string) {
+    this.filter.category = value;
+    this.onFilterChange();
   }
 }
