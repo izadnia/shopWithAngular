@@ -8,10 +8,11 @@ import { Product } from '../../../../../models/product';
 })
 export class ProductsControllerComponent {
   @Output() filterChanged: EventEmitter<any> = new EventEmitter<any>();
-  titleIsCollapsed = true;
-  priceIsCollapsed = true;
-  categoryIsCollapsed = true;
-  expireDateIsCollapsed = true;
+  titleIsCollapsed = false;
+  priceIsCollapsed = false;
+  categoryIsCollapsed = false;
+  expireDateIsCollapsed = false;
+  inputSearchLabel: string = 'نام محصول';
   filter: any = {
     title: '',
     price: 1000,
