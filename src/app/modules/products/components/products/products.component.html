@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container row col-lg d-flex">
   <!-- <p class="display-6">محصولات ما</p> -->
-  <div class="d-flex justify-content-between">
+  <!-- <div class="d-flex flex-column justify-content-start">
     <div class="col-md-4">
       <input
         [(ngModel)]="filter.title"
@@ -27,26 +27,39 @@
     <label for="customRange3" class="text-primary mx-4 w-25 form-label fs-4">تا {{filter.price}} تومان</label>
 
     </div>
+  </div> -->
+  <!-- <p>
+    میوه ها {{ sumSelectedProduct | json }}
+  </p> -->
+  <div class="col col-xl-3 col-12">
+    <div class="border rounded p-3 m-1 text-center">
+      <h5>از نتایج جدید جست و جو بلافاصله مطلع شوید</h5>
+      <br />
+      <a href="" class="" disabled> +نتایج جدید را خبر بده </a>
+    </div>
+    
+    <app-products-controller (filterChanged)="onFilterChanged($event)" ></app-products-controller>
   </div>
-
-  <p>
-    <!-- میوه ها {{ sumSelectedProduct | json }} -->
-  </p>
-  <div class="row mt-4">
-    <ng-container
-      *ngIf="(productList | filterProducts : filter).length > 0; else notFound"
-    >
-      <div
-        class="col-md-3 col-sm-6"
-        *ngFor="let item of productList | filterProducts : filter"
+  <div class="col col-xl-9 col-12">
+    <div class="row">
+      <ng-container
+        *ngIf="
+          (productList | filterProducts : filter).length > 0;
+          else notFound
+        "
       >
-        <app-product [product]="item"></app-product>
-      </div>
-    </ng-container>
-    <ng-template #notFound>
-      <div class="col text-center p-4 m-4">
-        <h3 class="text-danger">محصولی متاسفانه یافت نشد :(</h3>
-      </div>
-    </ng-template>
+        <div
+          class=" col-md-4 col-sm-12"
+          *ngFor="let item of productList | filterProducts : filter"
+        >
+          <app-product [product]="item"></app-product>
+        </div>
+      </ng-container>
+      <ng-template #notFound>
+        <div class="col text-center p-4 m-4">
+          <h3 class="text-danger">محصولی متاسفانه یافت نشد :(</h3>
+        </div>
+      </ng-template>
+    </div>
   </div>
 </div>

@@ -1,0 +1,80 @@
+<div class="sticky-top py-1">
+  <div>
+    <div class="border rounded p-1 m-1">
+      <h4
+        [ngStyle]="{ cursor: 'pointer' }"
+        class="px-2 py-1 m-100"
+        (click)="titleIsCollapsed = !titleIsCollapsed"
+        [attr.aria-expanded]="!titleIsCollapsed"
+        aria-controls="collapseExample"
+      >
+        نام
+      </h4>
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="titleIsCollapsed">
+        <input
+          (ngModelChange)="onFilterChange()"
+          [(ngModel)]="filter.title"
+          class="form-control text-info text-center fs-4"
+        />
+      </div>
+    </div>
+    <div class="border rounded p-1 m-1">
+      <h4
+        [ngStyle]="{ cursor: 'pointer' }"
+        class="px-2 py-1 m-100"
+        (click)="priceIsCollapsed = !priceIsCollapsed"
+        [attr.aria-expanded]="!priceIsCollapsed"
+        aria-controls="collapseExample"
+      >
+        قیمت
+      </h4>
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="priceIsCollapsed">
+        <input
+          type="range"
+          [value]="filter.price"
+          (ngModelChange)="onFilterChange()"
+          [(ngModel)]="filter.price"
+          class="form-range text-info text-center fs-4"
+          min="10"
+          max="1000"
+        />
+      </div>
+    </div>
+    <div class="border rounded p-1 m-1">
+      <h4
+        [ngStyle]="{ cursor: 'pointer' }"
+        class="px-2 py-1 m-100"
+        (click)="categoryIsCollapsed = !categoryIsCollapsed"
+        [attr.aria-expanded]="!categoryIsCollapsed"
+        aria-controls="collapseExample"
+      >
+        دسته بندی
+      </h4>
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="categoryIsCollapsed">
+        <input
+          (ngModelChange)="onFilterChange()"
+          [(ngModel)]="filter.category"
+          class="form-control text-info text-center fs-4"
+        />
+      </div>
+    </div>
+    <div class="border rounded p-1 m-1">
+      <h4
+        [ngStyle]="{ cursor: 'pointer' }"
+        class="px-2 py-1 m-100"
+        (click)="expireDateIsCollapsed = !expireDateIsCollapsed"
+        [attr.aria-expanded]="!expireDateIsCollapsed"
+        aria-controls="collapseExample"
+      >
+        تاریخ انقضاء
+      </h4>
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="expireDateIsCollapsed">
+        <input
+          (ngModelChange)="onFilterChange()"
+          [(ngModel)]="filter.expireDate"
+          class="form-control text-info text-center fs-4"
+        />
+      </div>
+    </div>
+  </div>
+</div>

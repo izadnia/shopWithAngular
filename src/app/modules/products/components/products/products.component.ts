@@ -17,7 +17,10 @@ export class ProductsComponent {
   ngOnInit(): void {
     (this.filter.price = 1000), this.setProduct();
   }
-
+  onFilterChanged(val : Product){
+    this.filter = val
+    console.log(val)
+  }
   setProduct() {
     this.productService.getProducts().subscribe((data) => {
       this.productList = data;

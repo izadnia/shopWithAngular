@@ -9,22 +9,21 @@ export class ProductTestService {
   constructor() {}
 
   /************ سبد خرید  */
-  checkOutList: Product[] = [
-  
-  ];
+  checkOutList: Product[] = [];
   /*********************** */
 
   //************* لیست محصولات ********** */
   productList: Product[] = [
-    { id: 1, title: 'گوجه فرنگی', price: 800, expireDate: 1710494434248 },
-    { id: 2, title: 'پیاز', price: 700, expireDate: 1715494434248 },
-    { id: 3, title: 'سیب زمینی', price: 500, expireDate: 1729494434248 },
-    { id: 4, title: 'سیب', price: 400, expireDate: 1729494434248 },
-    { id: 5, title: 'خیار رسمی', price: 100, expireDate: 1719494434248 },
-    { id: 6, title: 'خیار سالادی', price: 100, expireDate: 1719494434248 },
-    { id: 7, title: 'کلم', price: 300, expireDate: 1713494434248 },
-    { id: 8, title: 'کاهو', price: 400, expireDate: 1711494434248 },
-    { id: 9, title: 'کلم سفید', price: 800, expireDate: 1714494434248 },
+    { id: 1, category:'سیفی', title: 'گوجه فرنگی', price: 800, expireDate: 1710494434248 },
+    { id: 2, category:'صیفی', title: 'پیاز', price: 700, expireDate: 1715494434248 },
+    { id: 3, category:'صیفی', title: 'سیب زمینی', price: 500, expireDate: 1729494434248 },
+    { id: 4, category:'میوه', title: 'سیب', price: 400, expireDate: 1729494434248 },
+    { id: 5, category:'صیفی', title: 'خیار رسمی', price: 100, expireDate: 1719494434248 },
+    { id: 6, category:'صیفی', title: 'خیار سالادی', price: 100, expireDate: 1719494434248 },
+    { id: 7, category:'صیفی', title: 'کلم', price: 300, expireDate: 1713494434248 },
+    { id: 8, category:'صیفی', title: 'کاهو', price: 400, expireDate: 1711494434248 },
+    { id: 9, category:'صیفی', title: 'کلم سفید', price: 800, expireDate: 1714494434248 },
+    { id: 9, category:'صیفی', title: 'هلو', price:500, expireDate: 1714494434248 },
   ];
   //************************************** */
 
@@ -41,8 +40,7 @@ export class ProductTestService {
   }
   /*************************************** */
 
-
-    // ******** دریافت لیست محصولات انتخاب شده ******** */
+  // ******** دریافت لیست محصولات انتخاب شده ******** */
   //
   // تعریف کلاس : Observable
   // ورودی : -
@@ -52,7 +50,6 @@ export class ProductTestService {
   //
   getSelectedProducts(): Observable<Product[]> {
     return of(this.checkOutList);
-    
   }
   /*************************************** */
 
@@ -64,13 +61,12 @@ export class ProductTestService {
   // توضیحات :
   // شناسه کالا دریافت و مشخصات کالا پاسخ داده می شود
   //
-  deleteSelectedProduct(id: number) : Observable<any> {
-    let index = this.checkOutList.findIndex((m) => m.id == id)
-    this.checkOutList.splice(index,1)
+  deleteSelectedProduct(id: number): Observable<any> {
+    let index = this.checkOutList.findIndex((m) => m.id == id);
+    this.checkOutList.splice(index, 1);
     return of(this.checkOutList);
   }
   //************************************** */
-
 
   // ********** دریافت یک محصول ********** */
   //
@@ -111,15 +107,14 @@ export class ProductTestService {
   //  3 : به آرایه محصولات انتخاب شده توسط کاربر اضافه می کند
   //
   //
-  setSelectedProducts(id : number) {
-    let object =this.productList.filter((m)=>m.id == id)[0]
-    let existFlag = this.checkOutList.filter((m)=>m.id == id)[0]
-    if(!existFlag){
-      this.checkOutList.push(object)
-      alert(`${object.title} با موفقیت به سبد خرید اضافه شد`)
-
-    }else{
-      alert(`${existFlag.title} قبلا به سبد خرید اضافه شده است`)
+  setSelectedProducts(id: number) {
+    let object = this.productList.filter((m) => m.id == id)[0];
+    let existFlag = this.checkOutList.filter((m) => m.id == id)[0];
+    if (!existFlag) {
+      this.checkOutList.push(object);
+      alert(`${object.title} با موفقیت به سبد خرید اضافه شد`);
+    } else {
+      alert(`${existFlag.title} قبلا به سبد خرید اضافه شده است`);
     }
   }
   // }

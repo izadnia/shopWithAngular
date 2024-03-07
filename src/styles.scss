@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 @import url("http://fonts.googleapis.com/css?family=Mirza:400,300,700");
 body {
-    font-family: 'Mirza', sans-serif !important;
-    font-size: 1rem;
+  font-family: "Mirza", sans-serif !important;
+  font-size: 1rem;
+  a {
+    text-decoration: none;
   }
+}
