@@ -14,7 +14,7 @@ export class ProductsComponent {
   productList: Product[] = [];
 
   ngOnInit(): void {
-    (this.filter.price = 1000), this.setProduct();
+    (this.filter.price = 100), this.setProduct();
   }
   onFilterChanged(val: Product) {
     this.filter = val;

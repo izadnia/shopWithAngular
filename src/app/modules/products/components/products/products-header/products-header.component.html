@@ -9,11 +9,11 @@
       </h4>
       <button
         type="button"
-        class="close mx-1 bg-white border-0"
+        class="close mx-1 bg-white border-0 "
         aria-label="Close"
         (click)="excuteTitle()"
       >
-        <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true" class="" [ngStyle]="{'font-size': '1.4rem' }">&times;</span>
       </button>
     </div>
   </ng-container>
@@ -22,11 +22,11 @@
       <h4>تا {{ filterApplied.price }} تومان</h4>
       <button
         type="button"
-        class="close mx-1 bg-white border-0"
+        class="close mx-1 bg-white border-0 "
         aria-label="Close"
         (click)="excutePrice()"
       >
-        <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true" class="" [ngStyle]="{'font-size': '1.4rem' }">&times;</span>
       </button>
     </div>
   </ng-container>
@@ -38,11 +38,11 @@
       </h4>
       <button
         type="button"
-        class="close mx-1 bg-white border-0"
+        class="close mx-1 bg-white border-0 "
         aria-label="Close"
         (click)="excuteCategory()"
       >
-        <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true" class="" [ngStyle]="{'font-size': '1.4rem' }">&times;</span>
       </button>
     </div>
   </ng-container>
