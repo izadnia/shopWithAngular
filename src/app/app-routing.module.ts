@@ -20,13 +20,20 @@ const routes: Routes = [
       import('./modules/products/products.module').then(
         (m) => m.ProductsModule
       ),
-      canActivate: [UpdateingGuard],
+    canActivate: [UpdateingGuard],
   },
   {
     path: 'checkout',
     loadChildren: () =>
       import('./modules/checkout/checkout.module').then(
         (m) => m.CheckoutModule
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
       ),
   },
 ];
