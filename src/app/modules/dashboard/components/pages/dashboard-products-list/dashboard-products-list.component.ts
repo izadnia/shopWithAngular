@@ -17,9 +17,9 @@ export class DashboardProductsListComponent {
   }
 
   productslist: Product[];
-  titlePlaceholder : string = 'جست و جو'
-  pricePlaceholder : string = 'فی'
-  categoryPlaceholder : string = 'دسته'
+  titlePlaceholder : string = 'نام؟'
+  pricePlaceholder : string = 'فی؟'
+  categoryPlaceholder : string = 'دسته؟'
   getProducts() {
     this.productService.getProducts().subscribe((m) => (this.productslist = m));
   }
