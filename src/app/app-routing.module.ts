@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UpdateingGuard } from './guards/updateing-guard.guard';
 import { HomeComponent } from './modules/home/componet/home.component';
 import { ProductsComponent } from './modules/products/components/products/products.component';
@@ -36,6 +37,9 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
+
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({

@@ -12,6 +12,8 @@ import { ProductService } from './services/product.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment.development';
 import { ProductTestService } from './services/product-test.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UnderConstructionComponent } from './components/under-construction/under-construction.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ProductTestService } from './services/product-test.service';
     FooterComponent,
     SidebarComponent,
     HomeComponent,
+    NotFoundComponent,
+    UnderConstructionComponent,
 
 
   ],

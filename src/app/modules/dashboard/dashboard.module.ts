@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardSidebarComponent } from './dashboard/components/dashboard-sidebar/dashboard-sidebar.component';
-import { DashboardNavbarComponent } from './dashboard/components/dashboard-navbar/dashboard-navbar.component';
+import { DashboardSidebarComponent } from './components/dashboard-sidebar/dashboard-sidebar.component';
+import { DashboardNavbarComponent } from './components/dashboard-navbar/dashboard-navbar.component';
+import { DashboardProductsListComponent } from './components/pages/dashboard-products-list/dashboard-products-list.component';
+import { DashboardMainPageComponent } from './components/pages/dashboard-main-page/dashboard-main-page.component';
+import { DashboardComponent } from './dashboard.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     DashboardSidebarComponent,
-    DashboardNavbarComponent
+    DashboardNavbarComponent,
+    DashboardProductsListComponent,
+    DashboardMainPageComponent
   ],
   imports: [
     CommonModule,
