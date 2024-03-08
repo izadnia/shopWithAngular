@@ -11,7 +11,7 @@
         type="button"
         class="close mx-1 bg-white text-dark border-0"
         aria-label="Close"
-        (click)="excuteTitle()"
+        (click)="removeTitle()"
       >
         <span aria-hidden="true" class="" [ngStyle]="{ 'font-size': '1.4rem' }"
           >&times;</span
@@ -26,7 +26,7 @@
         type="button"
         class="close mx-1 bg-white text-dark border-0"
         aria-label="Close"
-        (click)="excutePrice()"
+        (click)="removePrice()"
       >
         <span aria-hidden="true" class="" [ngStyle]="{ 'font-size': '1.4rem' }"
           >&times;</span
@@ -45,12 +45,26 @@
         type="button"
         class="close mx-1 bg-white text-dark border-0"
         aria-label="Close"
-        (click)="excuteCategory()"
+        (click)="removeCategory()"
       >
         <span aria-hidden="true" class="" [ngStyle]="{ 'font-size': '1.4rem' }"
           >&times;</span
         >
       </button>
     </div>
+  </ng-container>
+  <ng-container
+    *ngIf="
+      filterApplied.category.length > 0 ||
+      filterApplied.title.length > 0 ||
+      filterApplied.price < 1000
+    "
+  >
+    <button
+      (click)="removeAll()"
+      class="border rounded bg-danger text-white d-flex align-items-center my-1 mx-2"
+    >
+      حذف فیلتر ها -
+    </button>
   </ng-container>
 </div>

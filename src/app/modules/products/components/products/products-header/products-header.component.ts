@@ -19,15 +19,21 @@ export class ProductsHeaderComponent {
   // onfilterChanged() {
   //   this.filterChanged.emit(this.filter);
   // }
-  excuteTitle() {
+  removeTitle() {
     this.filterApplied.title = '';
     this.filterChanged.emit(this.filterApplied);
   }
-  excutePrice() {
+  removePrice() {
     this.filterApplied.price = 1000;
     this.filterChanged.emit(this.filterApplied);
   }
-  excuteCategory() {
+  removeCategory() {
+    this.filterApplied.category = '';
+    this.filterChanged.emit(this.filterApplied);
+  }
+  removeAll() {
+    this.filterApplied.title = '';
+    this.filterApplied.price = 1000;
     this.filterApplied.category = '';
     this.filterChanged.emit(this.filterApplied);
   }
