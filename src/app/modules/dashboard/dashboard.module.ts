@@ -6,7 +6,7 @@ import { DashboardNavbarComponent } from './components/dashboard-navbar/dashboar
 import { DashboardProductsListComponent } from './components/pages/dashboard-products-list/dashboard-products-list.component';
 import { DashboardMainPageComponent } from './components/pages/dashboard-main-page/dashboard-main-page.component';
 import { DashboardComponent } from './dashboard.component';
-import { PersianDatePipe } from '../../pipes/persiandate/persian-date.pipe';
+
 import { DashboardSinglePageEditComponent } from './components/pages/dashboard-single-page-edit/dashboard-single-page-edit.component';
 
 
@@ -17,7 +17,7 @@ import { DashboardSinglePageEditComponent } from './components/pages/dashboard-s
     DashboardNavbarComponent,
     DashboardProductsListComponent,
     DashboardMainPageComponent,
-    PersianDatePipe,
+
     DashboardSinglePageEditComponent
   ],
   imports: [

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/products/product/product.component';
-import { PersianDatePipe } from '../../pipes/persiandate/persian-date.pipe';
+
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { FormsModule } from '@angular/forms';
 import { FilterProductsPipe } from '../../pipes/filterproduct/filter-products.pipe';
@@ -15,6 +15,7 @@ import {
   NgbDropdownModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsHeaderComponent } from './components/products/products-header/products-header.component';
+import { PersianDatePipe } from '../../pipes/persiandate/persian-date.pipe';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,9 @@ import { ProductsHeaderComponent } from './components/products/products-header/p
     ProductComponent,
     SingleProductComponent,
     FilterProductsPipe,
-    PersianDatePipe,
     ProductsControllerComponent,
     ProductsHeaderComponent,
+    PersianDatePipe
   ],
   imports: [
     CommonModule,
