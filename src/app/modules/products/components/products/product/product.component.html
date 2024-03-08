@@ -1,31 +1,47 @@
 <div class="card mb-4 text-center">
-    <ng-template #content let-c="close" let-d="dismiss">
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title"></h4>
-          <button type="button" class="btn-close bg-danger" aria-label="Close" (click)="d('Cross click')"></button>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-body text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <img
+            [src]="'assets/img/' + product.id + '.jpg'"
+            class="card-img-top rounded"
+            alt="product"
+          />
         </div>
-        <div class="modal-body text-center">
-            <div class="row justify-content-center">
-              <div class="col-md-5">
-                <img [src]="'assets/img/' + product.id + '.jpg'" class="card-img-top rounded" alt="product">
-              </div>
-            </div>
-            
-          </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" (click)="c('Save click')">متوجه شدم</button>
-        </div>
-      </ng-template>
-    
-      <div class="col-md-12 ">
-        <img [src]="'assets/img/' + this.product.id + '.jpg'" class="card-img-top rounded" alt="product">
+      </div>
     </div>
+  </ng-template>
+
+  <div class="col-md-12">
+    <img
+      [src]="'assets/img/' + this.product.id + '.jpg'"
+      class="card-img-top rounded"
+      alt="product"
+    />
+  </div>
   <div class="card-body text-center">
-    <h3 class="card-title ">{{product.title}}</h3>
-    <p class="card-text">{{product.price}} تومان</p>
-    <P>   انقضاء :  <span>{{product.expireDate | persianDate }}</span></P>
-    
-    <button (click)="selectProduct(product.id)"  class="btn btn-success">اضافه به سبد خرید</button>
-    <button (click)="selectProductPage(product)"  class="btn btn-primary">مشخصات محصول</button>
+    <h3 class="card-title">{{ product.title }}</h3>
+    <p class="card-text">{{ product.price }} تومان</p>
+    <P>
+      انقضاء : <span>{{ product.expireDate | persianDate }}</span></P
+    >
+    <div>
+      <ng-container *ngIf="itIsSelected; else addTo">
+        <button   (click)="deleteSelectedProduct(product.id)" class="btn btn-danger">
+          حذف از سبد خرید
+        </button>
+      </ng-container>
+      <ng-template #addTo>
+        <button (click)="selectProduct(product.id)" class="btn btn-success">
+          اضافه به سبد خرید
+        </button>
+      </ng-template>
+
+      <hr />
+      <button (click)="selectProductPage(product)" class="btn btn-primary">
+        مشخصات محصول
+      </button>
+    </div>
   </div>
 </div>

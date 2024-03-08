@@ -28,7 +28,8 @@ export class SingleProductComponent {
           .subscribe((data) => (this.product = data));
       }
     );
-
+    this.getSelectedProducts()
+    
     // this.rout.params.subscribe((params: Params) => {
     //   let id = +params['id'];
     //   if (id) {
@@ -45,6 +46,24 @@ export class SingleProductComponent {
   }
   goToCheckOut() {
     this.router.navigate(['checkout']);
+  }
+
+  selectedProductList: Product[] = [];
+  itIsSelected: boolean = false;
+
+  getSelectedProducts() {
+    this.productService.getSelectedProducts().subscribe((data) => {
+      if (data.filter((item) => item.id == this.product.id))
+        this.selectedProductList = data;
+    });
+    if (this.selectedProductList.filter((m) => m.id == this.product.id)[0]) {
+      this.itIsSelected = true;
+    }
+  }
+  deleteSelectedProduct(id: number) {
+    this.productService.deleteSelectedProduct(id);
+    alert(`${this.product.title} از سبد شما حذف گردید`)
+    this.itIsSelected = false;
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

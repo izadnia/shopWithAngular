@@ -15,8 +15,7 @@ export class ProductComponent {
     config: NgbModalConfig,
     private modalService: NgbModal,
     private router: Router,
-    private productService : ProductService
-   
+    private productService: ProductService
   ) {
     config.backdrop = 'static';
     config.keyboard = false;
@@ -29,13 +28,33 @@ export class ProductComponent {
 
   ngOnInit(): void {
     this.imageSrc = 'assets/img/' + this.product.id + '.jpg';
+    this.getSelectedProducts();
   }
   @Input() product: Product;
   // @Output() onProductSelect = new EventEmitter<Product>();
 
-  selectProduct(id : number) {
+  selectProduct(id: number) {
     // this.onProductSelect.emit(this.product);
-    this.productService.setSelectedProducts(id)
+    this.productService.setSelectedProducts(id);
+    this.getSelectedProducts();
+  }
+  selectedProductList: Product[] = [];
+  itIsSelected: boolean = false;
+
+  getSelectedProducts() {
+    this.productService.getSelectedProducts().subscribe((data) => {
+      if (data.filter((item) => item.id == this.product.id))
+        this.selectedProductList = data;
+    });
+    if (this.selectedProductList.filter((m) => m.id == this.product.id)[0]) {
+      this.itIsSelected = true;
+    }
+  }
+
+  deleteSelectedProduct(id: number) {
+    this.productService.deleteSelectedProduct(id);
+    alert(`${this.product.title} از سبد شما حذف گردید`)
+    this.itIsSelected = false;
   }
   selectProductPage(item: Product) {
     this.productService.setSelectedProductPage(item);
