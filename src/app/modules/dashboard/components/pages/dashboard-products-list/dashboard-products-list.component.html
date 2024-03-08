@@ -1,1 +1,78 @@
-<p>dashboard-products-list works!</p>
+<ng-container *ngIf="productslist">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">نام کالا</th>
+        <th scope="col">تصویر کالا</th>
+        <th scope="col">دسته</th>
+        <th scope="col">قیمت واحد</th>
+        <th scope="col">تاریخ انقضاء</th>
+        <th scope="col">حذف</th>
+        <th scope="col">اضافه</th>
+        <th scope="col">صفحه ی کالا</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="align-middle" scope="row"></th>
+        <th class="align-middle" scope="row">
+          <input
+            class="form-control text-info text-center p-1"
+            [ngStyle]="{ 'max-width': '6rem' }"
+            [placeholder]="titlePlaceholder"
+            type="text"
+          />
+        </th>
+        <th class="align-middle" scope="row"></th>
+        <th class="align-middle" scope="row">
+          <input
+            class="form-control text-info text-center p-1"
+            [ngStyle]="{ 'max-width': '4rem' }"
+            [placeholder]="categoryPlaceholder"
+            type="text"
+          />
+        </th>
+        <th class="align-middle" scope="row">
+          <input
+            class="form-control text-info text-center p-1"
+            [ngStyle]="{ 'max-width': '4rem' }"
+            [placeholder]="pricePlaceholder"
+            type="text"
+          />
+        </th>
+        <th class="align-middle" scope="row"></th>
+        <th class="align-middle" scope="row"></th>
+        <th class="align-middle" scope="row"></th>
+        <th class="align-middle" scope="row"></th>
+      </tr>
+      <ng-container *ngFor="let item of productslist">
+        <tr>
+          <th class="align-middle" scope="row">{{ item.id }}</th>
+          <td class="align-middle">{{ item.title }}</td>
+          <td class="align-middle">
+            <img
+              [src]="'assets/img/' + item.id + '.jpg'"
+              [ngStyle]="{ width: '5rem' }"
+              class="card-img-top rounded"
+              alt="product"
+            />
+          </td>
+          <td class="align-middle">{{ item.category }}</td>
+          <td class="align-middle">{{ item.price }}</td>
+
+          <td class="align-middle">{{ item.expireDate | persianDate }}</td>
+          <td class="align-middle">
+            <button class="btn btn-danger">حذف</button>
+          </td>
+          <td class="align-middle">
+            <button class="btn btn-primary">ویرایش</button>
+          </td>
+          <td class="align-middle">
+            <button class="btn btn-success">صفحه</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</ng-container>
