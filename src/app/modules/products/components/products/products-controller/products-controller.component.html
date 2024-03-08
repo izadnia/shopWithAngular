@@ -1,7 +1,7 @@
 <div class="sticky-top py-1">
   <div>
     <div class="border rounded p-1 m-1 bg-light">
-      <h5
+      <h6
         [ngStyle]="{ cursor: 'pointer' }"
         class="px-2 py-1 m-100"
         (click)="titleIsCollapsed = !titleIsCollapsed"
@@ -9,7 +9,7 @@
         aria-controls="collapseExample"
       >
         نام
-      </h5>
+      </h6>
       <div #collapse="ngbCollapse" [(ngbCollapse)]="titleIsCollapsed">
         <input
           (ngModelChange)="onFilterChange()"
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="border rounded p-1 m-1 bg-light">
-      <h5
+      <h6
         [ngStyle]="{ cursor: 'pointer' }"
         class="px-2 py-1 m-100"
         (click)="priceIsCollapsed = !priceIsCollapsed"
@@ -28,7 +28,7 @@
         aria-controls="collapseExample"
       >
         قیمت
-      </h5>
+      </h6>
       <div #collapse="ngbCollapse" [(ngbCollapse)]="priceIsCollapsed">
         <input
           type="range"
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="border rounded p-1 m-1 bg-light">
-      <h5
+      <h6
         [ngStyle]="{ cursor: 'pointer' }"
         class="px-2 py-1 m-100"
         (click)="categoryIsCollapsed = !categoryIsCollapsed"
@@ -55,7 +55,7 @@
         aria-controls="collapseExample"
       >
         دسته بندی
-      </h5>
+      </h6>
       <div #collapse="ngbCollapse" [(ngbCollapse)]="categoryIsCollapsed">
         <!-- <input
           (ngModelChange)="onFilterChange()"
@@ -95,7 +95,7 @@
       </div>
     </div>
     <div class="border rounded p-1 m-1 bg-light">
-      <h5
+      <h6
         [ngStyle]="{ cursor: 'pointer' }"
         class="px-2 py-1 m-100"
         (click)="expireDateIsCollapsed = !expireDateIsCollapsed"
@@ -103,7 +103,7 @@
         aria-controls="collapseExample"
       >
         تاریخ انقضاء
-      </h5>
+      </h6>
       <div #collapse="ngbCollapse" [(ngbCollapse)]="expireDateIsCollapsed">
         <input
           (ngModelChange)="onFilterChange()"

@@ -1,12 +1,12 @@
-<div class="border bg-white  my-1 textdarke d-flex rounded  ">
+<div class="border bg-white my-1 textdarke d-flex rounded">
   <div class="m-2 p-2">
-    <h5>نتایج یافت شده:</h5>
+    <h6>نتایج یافت شده:</h6>
   </div>
   <ng-container *ngIf="filterApplied.title">
-    <div class="border rounded d-flex p-1 align-items-center px-2 my-2 mx-2">
-      <h5>
+    <div class="border rounded d-flex p-1 align-items-center px-2 my-1 mx-2">
+      <h6>
         {{ filterApplied.title }}
-      </h5>
+      </h6>
       <button
         type="button"
         class="close mx-1 bg-white text-dark border-0"
@@ -20,8 +20,8 @@
     </div>
   </ng-container>
   <ng-container *ngIf="filterApplied.price < 1000">
-    <div class="border rounded d-flex p-1 px-2 align-items-center my-2 mx-2">
-      <h5>تا {{ filterApplied.price }} تومان</h5>
+    <div class="border rounded d-flex p-1 px-2 align-items-center my-1 mx-2">
+      <h6>تا {{ filterApplied.price }} تومان</h6>
       <button
         type="button"
         class="close mx-1 bg-white text-dark border-0"
@@ -35,12 +35,12 @@
     </div>
   </ng-container>
   <ng-container *ngIf="filterApplied.category">
-    <div class="border rounded d-flex p-1 px-2 align-items-center my-2 mx-2">
-      <h5>
+    <div class="border rounded d-flex p-1 px-2 align-items-center my-1 mx-2">
+      <h6>
         در
         {{ filterApplied.category }}
         ها
-      </h5>
+      </h6>
       <button
         type="button"
         class="close mx-1 bg-white text-dark border-0"
