@@ -1,46 +1,19 @@
 <div class="container row col-lg d-flex">
-  <!-- <p class="display-6">محصولات ما</p> -->
-  <!-- <div class="d-flex flex-column justify-content-start">
-    <div class="col-md-4">
-      <input
-        [(ngModel)]="filter.title"
-        [placeholder]="inputSearchLabel"
-        type="text"
-        class="form-control text-info text-center fs-4"
-        aria-label="Large"
-        aria-describedby="inputGroup-sizing-sm"
-      />
-    </div>
-
-    <div class="d-flex justify-content-end my-1 px-2 text-center col-md-8">
-      <label for="customRange3" class="mx-4 text-primary form-label w-25 fs-4">نتایج محصولات:</label>
-      <input
-        [(ngModel)]="filter.price"
-        type="range"
-        class="form-range my-2 w-50"
-        [value]="filter.price"
-        min="10"
-        max="1000"
-        step="10"
-        id="customRange3"
-      />
-    <label for="customRange3" class="text-primary mx-4 w-25 form-label fs-4">تا {{filter.price}} تومان</label>
-
-    </div>
-  </div> -->
-  <!-- <p>
-    میوه ها {{ sumSelectedProduct | json }}
-  </p> -->
   <div class="col col-xl-3 col-12">
     <div class="border rounded p-3 m-1 text-center">
       <h5>از نتایج جدید جست و جو بلافاصله مطلع شوید</h5>
       <br />
       <a href="" class="" disabled> +نتایج جدید را خبر بده </a>
     </div>
-    <app-products-controller (filterChanged)="onFilterChanged($event)" ></app-products-controller>
+    <app-products-controller
+      (filterChanged)="onFilterChanged($event)"
+    ></app-products-controller>
   </div>
   <div class="col col-xl-9 col-12">
-    <app-products-header></app-products-header>
+    <app-products-header
+      [filterApplied]="filter"
+      (filterChanged)="onFilterChanged($event)"
+    ></app-products-header>
     <div class="row">
       <ng-container
         *ngIf="
@@ -49,7 +22,7 @@
         "
       >
         <div
-          class=" col-md-4 col-sm-12"
+          class="col-md-4 col-sm-12"
           *ngFor="let item of productList | filterProducts : filter"
         >
           <app-product [product]="item"></app-product>

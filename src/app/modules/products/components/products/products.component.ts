@@ -16,14 +16,12 @@ export class ProductsComponent {
   ngOnInit(): void {
     (this.filter.price = 1000), this.setProduct();
   }
-  onFilterChanged(val : Product){
-    this.filter = val
+  onFilterChanged(val: Product) {
+    this.filter = val;
   }
   setProduct() {
     this.productService.getProducts().subscribe((data) => {
       this.productList = data;
     });
   }
-
-
 }

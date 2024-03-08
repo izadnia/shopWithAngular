@@ -10,7 +10,7 @@
                 <img [src]="'assets/img/' + product.id + '.jpg'" class="card-img-top rounded" alt="product">
               </div>
             </div>
-            <p>{{ product.title }} به سبد خرید اضافه شد</p>
+            
           </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success" (click)="c('Save click')">متوجه شدم</button>
@@ -24,7 +24,7 @@
     <h3 class="card-title ">{{product.title}}</h3>
     <p class="card-text">{{product.price}} تومان</p>
     <P>   انقضاء :  <span>{{product.expireDate | persianDate }}</span></P>
-  
+    
     <button (click)="selectProduct(product.id)"  class="btn btn-success">اضافه به سبد خرید</button>
     <button (click)="selectProductPage(product)"  class="btn btn-primary">مشخصات محصول</button>
   </div>
