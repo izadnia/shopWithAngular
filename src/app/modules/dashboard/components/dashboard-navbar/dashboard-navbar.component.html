@@ -1,12 +1,17 @@
 <div [ngClass]="{ direction: 'ltr' }">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#"></a></li>
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item" aria-current="page">Data</li>
-      <li class="breadcrumb-item"><a href="#">Library</a></li>
-      <li class="breadcrumb-item"><a href="#">Library</a></li>
-      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li routerLinkActive="router-link-active" class="breadcrumb-item px-2">
+        <p>شما اینجا هستید :</p>
+      </li>
+      <li routerLinkActive="router-link-active" class="breadcrumb-item">
+        <a [routerLink]="['main']">dashboard</a>
+      </li>
+      <ng-container *ngFor="let item of fullUrl">
+        <li routerLinkActive="router-link-active" class="breadcrumb-item">
+          <a [routerLink]="[item]">{{ item }}</a>
+        </li>
+      </ng-container>
     </ol>
   </nav>
 </div>
