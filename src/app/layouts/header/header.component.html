@@ -1,22 +1,90 @@
 <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <div class="col-md-2">
-          <img [src]="'assets/img/logo.jpg'" class="card-img-top rounded" alt="product">
-        </div>
-        
-        <span class="fs-4 m-2">فروشگاه میوه جردن</span>
-      </a>
+  <header
+    class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+  >
+    <a
+      href="/"
+      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+    >
+      <div class="col-md-2">
+        <img
+          [src]="'assets/img/logo.jpg'"
+          class="card-img-top rounded"
+          alt="product"
+        />
+      </div>
 
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a [routerLink]="['/home']" routerLinkActive="router-link-active"  [routerLinkActive]="'active'" class="nav-link" aria-current="page">خانه</a></li>
-        <li class="nav-item"><a [routerLink]="['/products']" routerLinkActive="router-link-active"  [routerLinkActive]="'active'" class="nav-link">محصولات</a></li>
-        <li class="nav-item"><a [routerLink]="['/checkout']" routerLinkActive="router-link-active"  [routerLinkActive]="'active'" class="nav-link">سبد خرید</a></li>
-        <li class="nav-item"><a [routerLink]="['/about']" routerLinkActive="router-link-active"  [routerLinkActive]="'active'" class="nav-link">درباره ما</a></li>
-        <li class="nav-item"><a [routerLink]="['/about']" routerLinkActive="router-link-active"  [routerLinkActive]="'active'" class="nav-link">تماس با ما</a></li>
-        <hr/>
-        <hr/>
-        <li class="nav-item "><a [routerLink]="['/dashboard']" class="nav-link bg-success text-white">داشبورد</a></li>
-      </ul>
-    </header>
-  </div>
+      <span class="fs-4 m-2">فروشگاه میوه جردن</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a
+          [routerLink]="['/home']"
+          routerLinkActive="router-link-active"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          aria-current="page"
+          >خانه</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          [routerLink]="['/products']"
+          routerLinkActive="router-link-active"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >محصولات</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          [routerLink]="['/checkout']"
+          routerLinkActive="router-link-active"
+          [routerLinkActive]="'active'"
+          class="nav-link position-relative"
+          >سبد خرید
+
+          <ng-container *ngIf="checkoutList.length > 0">
+            <span
+              class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger"
+            >
+              {{ checkoutList.length }}
+            </span>
+          </ng-container>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          [routerLink]="['/about']"
+          routerLinkActive="router-link-active"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >درباره ما</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          [routerLink]="['/about']"
+          routerLinkActive="router-link-active"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >تماس با ما</a
+        >
+      </li>
+      <hr />
+      <hr />
+      <li class="nav-item">
+        <a
+          [routerLink]="['/dashboard']"
+          class="nav-link bg-success text-white position-relative"
+          >داشبورد مدیریت
+          <span
+            class="position-absolute top-0 start-100 translate-middle p-2 bg-secondary border border-light rounded-circle"
+          >
+          </span>
+        </a>
+      </li>
+    </ul>
+  </header>
+</div>
