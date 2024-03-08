@@ -7,10 +7,14 @@ import { ProductComponent } from './components/products/product/product.componen
 import { PersianDatePipe } from '../../pipes/persiandate/persian-date.pipe';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { FormsModule } from '@angular/forms';
-import {FilterProductsPipe} from '../../pipes/filterproduct/filter-products.pipe'
+import { FilterProductsPipe } from '../../pipes/filterproduct/filter-products.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsControllerComponent } from './components/products/products-controller/products-controller.component';
-import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbCollapseModule,
+  NgbDropdownModule,
+} from '@ng-bootstrap/ng-bootstrap';
+import { ProductsHeaderComponent } from './components/products/products-header/products-header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,8 @@ import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap
     SingleProductComponent,
     FilterProductsPipe,
     PersianDatePipe,
-    ProductsControllerComponent
+    ProductsControllerComponent,
+    ProductsHeaderComponent,
   ],
   imports: [
     CommonModule,
@@ -27,10 +32,8 @@ import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap
     FormsModule,
     HttpClientModule,
     NgbCollapseModule,
-    NgbDropdownModule
+    NgbDropdownModule,
   ],
-  providers:[
-   
-  ]
+  providers: [],
 })
-export class ProductsModule { }
+export class ProductsModule {}
