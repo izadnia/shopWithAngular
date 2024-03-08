@@ -10,10 +10,12 @@
     ></app-products-controller>
   </div>
   <div class="col col-xl-9 col-12">
-    <app-products-header
-      [filterApplied]="filter"
-      (filterChanged)="onFilterChanged($event)"
-    ></app-products-header>
+    <div class="py-1 bg-white sticky-top">
+      <app-products-header
+        [filterApplied]="filter"
+        (filterChanged)="onFilterChanged($event)"
+      ></app-products-header>
+    </div>
     <div class="row">
       <ng-container
         *ngIf="

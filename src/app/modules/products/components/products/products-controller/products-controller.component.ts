@@ -11,7 +11,7 @@ export class ProductsControllerComponent {
   priceIsCollapsed = true;
   categoryIsCollapsed = false;
   expireDateIsCollapsed = true;
-  inputSearchLabel: string = 'نام محصول';
+  inputSearchLabel: string = 'جست و جو';
   filter: any = {
     title: '',
     price: 1000,
