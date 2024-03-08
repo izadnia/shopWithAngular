@@ -7,6 +7,7 @@ import { DashboardProductsListComponent } from './components/pages/dashboard-pro
 import { DashboardMainPageComponent } from './components/pages/dashboard-main-page/dashboard-main-page.component';
 import { DashboardComponent } from './dashboard.component';
 import { PersianDatePipe } from '../../pipes/persiandate/persian-date.pipe';
+import { DashboardSinglePageEditComponent } from './components/pages/dashboard-single-page-edit/dashboard-single-page-edit.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PersianDatePipe } from '../../pipes/persiandate/persian-date.pipe';
     DashboardNavbarComponent,
     DashboardProductsListComponent,
     DashboardMainPageComponent,
-    PersianDatePipe
+    PersianDatePipe,
+    DashboardSinglePageEditComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between">
+  <div class="col-md-4">
+    <div class="col-md-12">
+      <img
+        [src]="'assets/img/' + this.product.id + '.jpg'"
+        class="card-img-top rounded"
+        alt="product"
+      />
+    </div>
+    <div class="card-body text-center">
+      <h3 class="card-title">{{ product.title }}</h3>
+      <p class="card-text">{{ product.price }} تومان</p>
+      <P [ngStyle]="{ 'font-size': '1.2rem' }">
+        انقضاء :
+        <span [ngStyle]="{ 'font-size': '1.2rem', color: 'blue' }">{{
+          product.expireDate | persianDate
+        }}</span></P
+      >
+
+      <button class="btn btn-primary">اعمال تغییرات</button>
+      <hr />
+      <button
+        [routerLink]="['/dashboard/products']"
+        routerLinkActive="router-link-active"
+        class="btn btn-secondary"
+      >
+        بازگشت
+      </button>
+    </div>
+  </div>
+  <div class="p-4 m-4"></div>
+</div>
