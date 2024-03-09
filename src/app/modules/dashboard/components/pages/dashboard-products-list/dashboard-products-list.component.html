@@ -1,7 +1,7 @@
 <ng-container *ngIf="productslist">
   <h5>
     {{ (productslist | filterProducts : this.filter).length }}
-    تا محصول
+     محصول
     {{ filter.title ? " برای واژه: " + '"' + filter.title + '"' : "" }}
     {{ filter.category ? " در " + filter.category + " ها " : "" }}
     {{ filter.price < 1000 ? " تا " + filter.price + " تومان " : "" }}
