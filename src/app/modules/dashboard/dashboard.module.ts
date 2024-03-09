@@ -6,28 +6,28 @@ import { DashboardNavbarComponent } from './components/dashboard-navbar/dashboar
 import { DashboardProductsListComponent } from './components/pages/dashboard-products-list/dashboard-products-list.component';
 import { DashboardMainPageComponent } from './components/pages/dashboard-main-page/dashboard-main-page.component';
 import { DashboardComponent } from './dashboard.component';
-
 import { DashboardSinglePageEditComponent } from './components/pages/dashboard-single-page-edit/dashboard-single-page-edit.component';
-import { FilterProductsPipe } from '../../pipes/filterproduct/filter-products.pipe';
 import { FormsModule } from '@angular/forms';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { FilterProductsPipe } from './pipes/filterproduct/filter-product.pipe';
+import { PersianDatePipe } from './pipes/perisandate/persian-date.pipe';
 
 @NgModule({
   declarations: [
-
     DashboardComponent,
     DashboardSidebarComponent,
     DashboardNavbarComponent,
     DashboardProductsListComponent,
     DashboardMainPageComponent,
-    FilterProductsPipe,
     DashboardSinglePageEditComponent,
+    FilterProductsPipe,
+    PersianDatePipe,
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
     FormsModule,
     DashboardRoutingModule,
-    NgbDropdownModule
+    NgbDropdownModule,
   ],
 })
 export class DashboardModule {}

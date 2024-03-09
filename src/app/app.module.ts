@@ -14,6 +14,8 @@ import { environment } from '../environments/environment.development';
 import { ProductTestService } from './services/product-test.service';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UnderConstructionComponent } from './components/under-construction/under-construction.component';
+import { FilterProductsPipe } from './modules/products/pipes/filterproduct/filter-products.pipe';
+
 
 @NgModule({
   declarations: [
@@ -24,10 +26,9 @@ import { UnderConstructionComponent } from './components/under-construction/unde
     HomeComponent,
     NotFoundComponent,
     UnderConstructionComponent,
-
-
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     NgbModule,
