@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterProductsPipe } from './pipes/filterproduct/filter-product.pipe';
 import { PersianDatePipe } from './pipes/perisandate/persian-date.pipe';
+import { DashboardPostProductComponent } from './components/pages/dashboard-post-product/dashboard-post-product.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PersianDatePipe } from './pipes/perisandate/persian-date.pipe';
     DashboardSinglePageEditComponent,
     FilterProductsPipe,
     PersianDatePipe,
+    DashboardPostProductComponent,
   ],
   imports: [
     CommonModule,

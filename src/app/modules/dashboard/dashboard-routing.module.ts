@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { UnderConstructionComponent } from '../../components/under-construction/under-construction.component';
 import { DashboardMainPageComponent } from './components/pages/dashboard-main-page/dashboard-main-page.component';
+import { DashboardPostProductComponent } from './components/pages/dashboard-post-product/dashboard-post-product.component';
 import { DashboardProductsListComponent } from './components/pages/dashboard-products-list/dashboard-products-list.component';
 import { DashboardSinglePageEditComponent } from './components/pages/dashboard-single-page-edit/dashboard-single-page-edit.component';
 
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'products',
         component: DashboardProductsListComponent,
+      },
+      {
+        path: 'post-product',
+        component: DashboardPostProductComponent,
       },
       {
         path: 'products/:id',
