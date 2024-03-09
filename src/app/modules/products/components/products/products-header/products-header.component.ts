@@ -16,9 +16,7 @@ export class ProductsHeaderComponent {
     category: '',
     expireDate: 0,
   };
-  // onfilterChanged() {
-  //   this.filterChanged.emit(this.filter);
-  // }
+
   removeTitle() {
     this.filterApplied.title = '';
     this.filterChanged.emit(this.filterApplied);
@@ -30,6 +28,16 @@ export class ProductsHeaderComponent {
   removeCategory() {
     this.filterApplied.category = '';
     this.filterChanged.emit(this.filterApplied);
+  }
+  removeAllFlag() {
+    if (
+      this.filterApplied.category?.length > 0 ||
+      this.filterApplied.title?.length > 0 ||
+      this.filterApplied?.price < 1000
+    ) {
+      return true;
+    }
+    return false;
   }
   removeAll() {
     this.filterApplied.title = '';

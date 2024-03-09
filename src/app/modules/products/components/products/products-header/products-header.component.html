@@ -54,11 +54,7 @@
     </div>
   </ng-container>
   <ng-container
-    *ngIf="
-      filterApplied.category.length > 0 ||
-      filterApplied.title.length > 0 ||
-      filterApplied.price < 1000
-    "
+    *ngIf="removeAllFlag()"
   >
     <button
       (click)="removeAll()"
