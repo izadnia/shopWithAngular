@@ -14,12 +14,20 @@ export class DashboardProductsListComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.getProducts();
+    
   }
 
   productslist: Product[];
-  titlePlaceholder : string = 'نام؟'
-  pricePlaceholder : string = 'فی؟'
-  categoryPlaceholder : string = 'دسته؟'
+  titlePlaceholder: string = 'نام؟';
+  pricePlaceholder: string = 'فی؟';
+  categoryPlaceholder: string = 'دسته؟';
+  filter: any = {
+    title: '',
+    price: 1000,
+    category: '',
+    expireDate: 0,
+  };
+
   getProducts() {
     this.productService.getProducts().subscribe((m) => (this.productslist = m));
   }

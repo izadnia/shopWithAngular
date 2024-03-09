@@ -8,21 +8,26 @@ import { DashboardMainPageComponent } from './components/pages/dashboard-main-pa
 import { DashboardComponent } from './dashboard.component';
 
 import { DashboardSinglePageEditComponent } from './components/pages/dashboard-single-page-edit/dashboard-single-page-edit.component';
-
+import { FilterProductsPipe } from '../../pipes/filterproduct/filter-products.pipe';
+import { FormsModule } from '@angular/forms';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
+
     DashboardComponent,
     DashboardSidebarComponent,
     DashboardNavbarComponent,
     DashboardProductsListComponent,
     DashboardMainPageComponent,
-
-    DashboardSinglePageEditComponent
+    FilterProductsPipe,
+    DashboardSinglePageEditComponent,
   ],
   imports: [
-    CommonModule,
-    DashboardRoutingModule
-  ]
+    CommonModule, 
+    FormsModule,
+    DashboardRoutingModule,
+    NgbDropdownModule
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}
