@@ -1,7 +1,163 @@
-<p>
-    این جا شما میتونی محصول جدید پست کنید
-</p>
-<p>
-    به زودی تکمیل میشه
-</p>
-<a [routerLink]="['/dashboard/main']" routerLinkActive="router-link-active" >بازگشت به داشبورد</a>
+<!-- <p>این جا شما میتونی محصول جدید پست کنید</p>
+<p>به زودی تکمیل میشه</p> -->
+<!-- <a [routerLink]="['/dashboard/main']" routerLinkActive="router-link-active"
+  >بازگشت به داشبورد</a
+> -->
+
+<h3>محصول جدید</h3>
+<div class="d-flex">
+  <div class="col-md-6 m-2 p-2">
+    <h4>فرم اطلاعات:</h4>
+    <div class="my-4"></div>
+    <form class="">
+      <div class="form-group d-flex my-2 py-2">
+        <label class="col-4" for="title ">عکس محصول:</label>
+        <div>
+          <input
+            disabled
+            type="text"
+            class="form-control col-6"
+            id="imgSrc"
+            name="imgSrc"
+            placeholder="در حال حاضر ممکن نیست"
+            required
+            [(ngModel)]="productModel.imgSrc"
+            #imgSrcModel="ngModel"
+            [ngStyle]="{ cursor: 'not-allowed' }"
+          />
+
+          <div
+            [hidden]="imgSrcModel.valid || imgSrcModel.pristine"
+            class="alert alert-danger"
+          >
+            محصول باید تاریخ انقضا داشته باشد
+          </div>
+        </div>
+      </div>
+      <div class="form-group d-flex my-2 py-2">
+        <label class="col-4" for="title ">نام محصول:</label>
+        <div>
+          <input
+            type="text"
+            class="form-control col-6"
+            id="title"
+            name="title"
+            required
+            [(ngModel)]="productModel.title"
+            #titleModel="ngModel"
+          />
+
+          <div
+            [hidden]="titleModel.valid || titleModel.pristine"
+            class="alert alert-danger"
+          >
+            نام محصول نمی تواند خالی باشد
+          </div>
+        </div>
+      </div>
+      <div class="form-group d-flex my-2 py-2">
+        <label class="col-4" for="title ">دسته بندی :</label>
+
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              id="dropdownBasic1"
+              ngbDropdownToggle
+            >
+              دسته بندی
+            </button>
+
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <div class="d-flex"></div>
+              <button (click)="productModel.category = 'میوه'" ngbDropdownItem>
+                میوه
+              </button>
+              <button (click)="productModel.category = 'صیفی'" ngbDropdownItem>
+                صیفی
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group d-flex my-2 py-2">
+        <label class="col-4" for="title ">قیمت :</label>
+        <div>
+          <input
+            type="number"
+            class="form-control col-6"
+            id="price"
+            name="price"
+            required
+            [(ngModel)]="productModel.price"
+            #priceModel="ngModel"
+          />
+
+          <div
+            [hidden]="priceModel.valid || priceModel.pristine"
+            class="alert alert-danger"
+          >
+            قیمت محصول نمی تواند خالی باشد
+          </div>
+        </div>
+      </div>
+      <div class="form-group d-flex my-2 py-2">
+        <label class="col-4" for="title ">تاریخ انقضاء:</label>
+        <div>
+          <input
+            disabled
+            type="text"
+            class="form-control col-6"
+            id="expireDate"
+            name="expireDate"
+            required
+            placeholder="1403/4/15"
+            [ngStyle]="{ cursor: 'not-allowed' }"
+          />
+        </div>
+      </div>
+      <br />
+      <hr />
+      <button class="m-2 px-3 py-2 btn btn-primary">
+        انتشار محصول بر روی سایت
+      </button>
+      <button
+        [routerLink]="['/dashboard']"
+        routerLinkActive="router-link-active"
+        class="m-2 px-3 py-2 btn btn-danger"
+      >
+        بازگشت
+      </button>
+    </form>
+  </div>
+
+  <div class="col-md-6 m-2 p-2">
+    <h4>پیش نمایش :</h4>
+
+    <div class="col-md-12 m-auto">
+      <div class="col-md-12 w-50 m-auto">
+        <img
+          [src]="'assets/img/fruit.jpg'"
+          class="card-img-top rounded"
+          alt="product"
+        />
+      </div>
+      <div class="card-body text-center">
+        <h3 class="card-title">{{ productModel.title }}</h3>
+        <p class="card-text">{{ productModel.price }} تومان</p>
+        <p class="card-text">دسته:{{ productModel.category }}</p>
+        <P [ngStyle]="{ 'font-size': '1.2rem' }">
+          انقضاء :
+          <span [ngStyle]="{ 'font-size': '1.2rem', color: 'blue' }">{{
+            productModel.expireDate | persianDate
+          }}</span></P
+        >
+
+        <button class="btn btn-success">اضافه به سبد خرید</button>
+        <hr />
+        <button class="btn btn-secondary">بازگشت</button>
+      </div>
+    </div>
+  </div>
+</div>
