@@ -27,7 +27,11 @@ export class DashboardProductsListComponent {
     category: '',
     expireDate: 0,
   };
-
+  removeAllFilters() {
+    this.filter.title = '';
+    this.filter.price = 1000;
+    this.filter.category = '';
+  }
   getProducts() {
     this.productService.getProducts().subscribe((m) => (this.productslist = m));
   }
