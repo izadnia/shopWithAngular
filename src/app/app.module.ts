@@ -14,7 +14,6 @@ import { environment } from '../environments/environment.development';
 import { ProductTestService } from './services/product-test.service';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UnderConstructionComponent } from './components/under-construction/under-construction.component';
-import { FilterProductsPipe } from './pipes/filterproduct/filter-products.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,7 @@ import { FilterProductsPipe } from './pipes/filterproduct/filter-products.pipe';
     HomeComponent,
     NotFoundComponent,
     UnderConstructionComponent,
-FilterProductsPipe,
+
 
   ],
   imports: [
