@@ -10,7 +10,7 @@
   <h6>
     از فیلتر های زیر برای پیدا کردن سریع تر محصول مورد نظر می توانید کمک بگیرید
   </h6>
-  <div [ngStyle]="{ 'max-height': '420px', 'overflow-y': 'scroll' }">
+  <div [ngStyle]="{ 'height': '420px', 'overflow-y': 'scroll' }">
     <table class="table table-striped">
       <thead>
         <tr>
@@ -69,13 +69,46 @@
             </div>
           </th>
           <th class="align-middle" scope="row">
-            <input
-              class="form-control text-info text-center p-1"
-              [ngStyle]="{ 'max-width': '4rem' }"
-              [placeholder]="pricePlaceholder"
-              [(ngModel)]="filter.price"
-              type="number"
-            />
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  id="dropdownBasic1"
+                  ngbDropdownToggle
+                ></button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <!-- <input
+                    class="form-control text-info m-auto text-center p-1"
+                    [ngStyle]="{ 'max-width': '4rem' }"
+                    [placeholder]="pricePlaceholder"
+                    [(ngModel)]="filter.price"
+                    type="string"
+                  /> -->
+                  <button (click)="filter.price = 1000" ngbDropdownItem>
+                    همه
+                  </button>
+                  <button (click)="filter.price = 800" ngbDropdownItem>
+                    تا 800 تومان
+                  </button>
+                  <button (click)="filter.price = 650" ngbDropdownItem>
+                    تا 650 تومان
+                  </button>
+                  <button (click)="filter.price = 500" ngbDropdownItem>
+                    تا 500 تومان
+                  </button>
+                  <button (click)="filter.price = 650" ngbDropdownItem>
+                    تا 650 تومان
+                  </button>
+                  <button (click)="filter.price = 420" ngbDropdownItem>
+                    تا 420 تومان
+                  </button>
+                  <button (click)="filter.price = 200" ngbDropdownItem>
+                    تا 200 تومان
+                  </button>
+                </div>
+              </div>
+            </div>
           </th>
           <th class="align-middle" scope="row"></th>
           <th class="align-middle" scope="row">
